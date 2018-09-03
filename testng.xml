@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Configured Suites" >
+
+    <listeners>
+        <listener class-name = "com.testing.logging.CustomListener" />
+    </listeners>
+
+    <suite-files>
+        <suite-file path="src/main/resources/scenario/example/EXAMPLE.xml"/>
+    </suite-files>
+</suite>
