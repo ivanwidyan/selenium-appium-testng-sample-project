@@ -16,4 +16,6 @@ public class AndroidElementConstants {
 
     // General Parameter
     public final static String PARAM_TEXT = "text";
+    public final static String PARAM_RESOURCE_ID = "resource-id";
+
 }

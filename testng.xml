@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test Configured Suites" >
+<suite name="BDD Test Suite" verbose="1" parallel="tests" thread-count="1" configfailurepolicy="continue" >
 
     <listeners>
         <listener class-name = "com.testing.logging.CustomListener" />
     </listeners>
 
-    <suite-files>
-        <suite-file path="src/main/resources/scenario/example/EXAMPLE.xml"/>
-    </suite-files>
+    <test name="Login and Update Profile Test" annotations="JDK" preserve-order="true">
+
+        <parameter name="platform" value="web" />
+        <parameter name="browser" value="firefox" />
+
+        <classes>
+            <class name="SetUp"/>
+        </classes>
+    </test>
+
 </suite>

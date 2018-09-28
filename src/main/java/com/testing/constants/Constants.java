@@ -13,6 +13,10 @@ public class Constants {
     public final static String SPACE = " ";
     public final static String ENTER = "\n";
 
+    public final static String SYMBOL_PLUS = "+";
+
     public final static int FIRST_INDEX = 0;
     public final static int SECOND_INDEX = 1;
+
+    public final static int SEVENTH_INDEX = 6;
 }

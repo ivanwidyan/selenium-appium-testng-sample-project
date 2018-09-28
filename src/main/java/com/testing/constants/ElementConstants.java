@@ -12,4 +12,7 @@ public class ElementConstants {
     public final static String FIND_ELEMENT_TYPE_CLASSNAME = "classname";
     public final static String FIND_ELEMENT_TYPE_XPATH = "xpath";
     public final static String FIND_ELEMENT_TYPE_CSSSELECTOR = "cssselector";
+
+    public final static String TEST_EMAIL = "emailforautomatetesting@gmail.com";
+    public final static String TEST_PASSWORD = "emailforautomatetesting123";
 }
