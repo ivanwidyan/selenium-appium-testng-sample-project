@@ -45,9 +45,13 @@ public class SetUp {
     }
 
     @BeforeTest
-    @Parameters({"platform", "browser", "devicename", "udid", "ip", "port"})
+    @Parameters({"platform", "browser", "devicename",
+            "udid", "ip", "port",
+            "url", "timeout" })
+
     public void SetUp(String platform, @Optional String browser, @Optional String devicename,
-                      @Optional String udid, @Optional String ip, @Optional String port) throws Exception {
+                      @Optional String udid, @Optional String ip, @Optional String port,
+                      @Optional String url, @Optional String timeout) throws Exception {
 
         String info;
 
@@ -79,7 +83,7 @@ public class SetUp {
                 if (port == null)
                     port = ConfigConstants.DEFAULT_PORT;
 
-                String url = "http://" + ip + ":" + port + "/wd/hub";
+                url = "http://" + ip + ":" + port + "/wd/hub";
                 Handler.SetCurrentAppiumDriver(new AndroidDriver(new URL(url), capabilities));
 
                 info = "SetUp Appium Driver for Device = " + Handler.GetCurrentAppiumDriver()
@@ -106,10 +110,13 @@ public class SetUp {
                 Handler.SetCurrentWebDriver(new ChromeDriver());
             }
 
-            Handler.GetCurrentWebDriver().manage().timeouts().implicitlyWait(
-                    ConfigConstants.DEFAULT_TIMEOUT, TimeUnit.SECONDS);
+            if (timeout != null)
+                Handler.GetCurrentWebDriver().manage().timeouts().implicitlyWait(
+                        Long.parseLong(timeout), TimeUnit.SECONDS);
 
-            Handler.GetCurrentWebDriver().get(ExampleConfigConstants.URL);
+            if (url != null)
+                Handler.GetCurrentWebDriver().get(ExampleConfigConstants.URL);
+
         }
     }
 

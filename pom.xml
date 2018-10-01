@@ -7,6 +7,8 @@
     <groupId>com.ivanwidyan.easy.testing</groupId>
     <artifactId>easy-testing-framework</artifactId>
     <version>0.0.1</version>
+    <description>Easy BDD testing framework for mobile and web applications using
+        Cucumber, Appium, Selenium, and TestNG</description>
 
     <properties>
         <selenium.version>3.14.0</selenium.version>
@@ -46,21 +48,21 @@
 
         <!-- Cucumber -->
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>1.2.5</version>
+            <version>4.0.0</version>
         </dependency>
 
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-jvm-deps</artifactId>
-            <version>1.0.5</version>
+            <version>1.0.6</version>
         </dependency>
 
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
-            <version>1.2.5</version>
+            <version>4.0.0</version>
         </dependency>
 
     </dependencies>
@@ -92,7 +94,7 @@
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
-                <version>3.8.0</version>
+                <version>3.20.0</version>
                 <executions>
                     <execution>
                         <id>execution</id>
@@ -101,7 +103,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>Easy-Testing-Framework</projectName>  <!-- Replace with project name -->
+                            <projectName>Easy-Testing-Framework</projectName>
                             <outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
                             <cucumberOutput>target/cucumber-reports/CucumberTestReport.json</cucumberOutput>
                             <buildNumber>1</buildNumber>
